@@ -33,7 +33,7 @@ Antes de comenzar, asegúrate de tener instalado en tu sistema:
 
 ---
 
-## 📖 Instalación y configuración
+## 📖 Instalación y configuración 
 
 Sigue estos pasos para configurar y ejecutar el proyecto:
 
