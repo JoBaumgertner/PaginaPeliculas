@@ -22,7 +22,7 @@ Sigue estos pasos para configurar y ejecutar el proyecto:
 
 Clona el repositorio y posicionamiento en la carpeta del proyecto:
 
-git clone https://github.com/icefarelli/TP-final---Pagina-web-Peliculas---TUP-2024.git
+git clone https://github.com/JoBaumgertner/PaginaPeliculas.git
 cd TP-final-angular-peliculas
 Instala las dependencias:
 
