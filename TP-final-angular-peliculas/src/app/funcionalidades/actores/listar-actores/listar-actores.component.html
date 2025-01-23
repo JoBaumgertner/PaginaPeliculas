@@ -1,0 +1,46 @@
+<div class="actores-container">
+  <div class="header-section">
+    <h2>Actores</h2>
+    <div class="buscador">
+      <input
+        type="text"
+        placeholder="Buscar actores..."
+        [(ngModel)]="terminoBusqueda"
+        (input)="buscarActores()"
+        class="buscador-input"
+      >
+      <span class="icono-buscar">🔍</span>
+    </div>
+  </div>
+  <!-- Actores mezclados (solo se muestran si no hay término de búsqueda) -->
+  <div *ngIf="terminoBusqueda === '' && actoresMezclados.length > 0" class="mezclados-section">
+    <div class="actores-grid">
+      <div *ngFor="let actor of actoresMezclados" class="actores-card" (click)="verDetalle(actor.id)">
+        <img [src]="obtenerUrlImagen(actor.profile_path)" [alt]="actor.name">
+        <div class="actores-info">
+          <h3>{{actor.name}}</h3>
+          <p class="rating">⭐ Popularidad: {{actor.popularity | number:'1.1-1'}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="actores-grid">
+    <div *ngFor="let actor of actoresFiltrados" class="actores-card" (click)="verDetalle(actor.id)">
+      <img [src]="obtenerUrlImagen(actor.profile_path)" [alt]="actor.name">
+      <div class="actores-info">
+        <h3>{{actor.name}}</h3>
+        <p class="rating">⭐ Popularidad: {{actor.popularity | number:'1.1-1'}}</p>
+      </div>
+    </div>
+  </div>
+
+    <!-- Mensaje cuando no hay resultados -->
+    <div *ngIf="terminoBusqueda !== '' && actoresFiltrados.length === 0" class="no-resultados">
+      <p>No se encontraron actores que coincidan con la búsqueda.</p>
+    </div>
+  </div>
+
+
+
